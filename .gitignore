@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+
+# Logs
+*.log
+
+# Compiled Go binaries
+*.exe
+*.dll
+*.so
+*.dylib
+ai-agent
+
+# Screenshots
+screenshots/
+
+# Configurations
+config.json
+
+# Miscellaneous
+.DS_Store
+*.swp
+*.swo
+*.bak
+*.tmp
