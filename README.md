@@ -9,6 +9,8 @@ A tool for integrating web-based AI services with OpenAI-compatible API endpoint
 - Cookie-based authentication for web services
 - Browser cookie extraction utilities
 - CLI interface for easy management
+- Comprehensive error handling and debugging tools
+- Self-healing deployment scripts
 
 ## Installation
 
@@ -23,7 +25,32 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Starting the OpenAI API Server
+### Quick Start with Batch Scripts
+
+For Windows users, we provide ready-to-use batch scripts:
+
+1. **Standard Scripts**:
+   - `claude-chrome.bat` - Sets up Claude with Chrome cookies on port 8000
+   - `copilot-chrome.bat` - Sets up GitHub Copilot with Chrome cookies on port 8001
+
+2. **Debug Scripts** (with comprehensive error handling):
+   - `claude-chrome-debug.bat` - Debug version with detailed logging and error recovery
+   - `copilot-chrome-debug.bat` - Debug version with detailed logging and error recovery
+
+3. **Utility Scripts**:
+   - `troubleshoot.bat` - Diagnoses common issues with your setup
+   - `ai-api-launcher.bat` - Unified launcher with menu for all options
+
+Example:
+```batch
+# Launch the unified menu
+ai-api-launcher.bat
+
+# Or run individual scripts directly
+claude-chrome-debug.bat
+```
+
+### Starting the OpenAI API Server Manually
 
 ```bash
 # Using ai-gateway backend
@@ -65,6 +92,17 @@ response = openai.ChatCompletion.create(
 
 print(response.choices[0].message.content)
 ```
+
+## Troubleshooting
+
+If you encounter issues, try the following:
+
+1. Run `troubleshoot.bat` to diagnose common problems
+2. Check the log files in `%USERPROFILE%\.freeloader\`
+3. Use the debug versions of the batch scripts for more detailed error information
+4. Make sure you're logged into the respective services in your browser
+5. Try closing all browser windows before extracting cookies
+6. Check if the ports (8000, 8001) are already in use by other applications
 
 ## Backend Options
 
@@ -113,4 +151,3 @@ python freeloader_cli_main.py brokedev config --set browser.headless=true
 ## License
 
 MIT
-
